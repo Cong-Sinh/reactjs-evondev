@@ -1,9 +1,9 @@
 import "./App.css";
-import Toggle from "./components/state/Toggle";
+import Game from "./components/tictactoe/game";
 function App() {
   return (
     <div className="App">
-      <Toggle />
+      <Game></Game>
     </div>
   );
 }
