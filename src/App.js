@@ -1,12 +1,9 @@
 import "./App.css";
-import YoutubeList from "./components/youtube/YoutubeList";
+import Toggle from "./components/state/Toggle";
 function App() {
-  const NewName = "sinhdz";
   return (
     <div className="App">
-      <YoutubeList>
-        <h2>{NewName}</h2>
-      </YoutubeList>
+      <Toggle />
     </div>
   );
 }
