@@ -1,9 +1,10 @@
 import "./App.css";
-import Game from "./components/tictactoe/game";
+import Button from "./components/button/button";
 function App() {
   return (
     <div className="App">
-      <Game></Game>
+      <Button>Primary</Button>
+      <Button secondary>Primary</Button>
     </div>
   );
 }
