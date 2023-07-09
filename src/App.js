@@ -1,5 +1,7 @@
 import "./asset/index.scss";
-import Counter from "./components/counter/Counter";
+// import Timmer from "./components/Timmer";
+import Header from "./components/Header";
+// import Counter from "./components/counter/Counter";
 // import Card from "./components/card/Card";
 // import CardList from "./components/card/CardList";
 // import CardTaiWind from "./components/card/CardTailWind";
@@ -8,7 +10,9 @@ function App() {
   return (
     <div className="App">
       {/* <Photos></Photos> */}
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      {/* <Timmer></Timmer> */}
+      <Header></Header>
     </div>
   );
 }
