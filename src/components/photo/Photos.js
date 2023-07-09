@@ -17,16 +17,16 @@ const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
 
-  const handleLoadMorePhoto = async () => {
+  const handleLoadMorePhoto = React.useCallback(async () => {
     const images = await GetRandomPhotos(nextPage);
     const newPhoto = [...randomPhotos, ...images];
     setRandomPhotos(newPhoto);
     //   setRandomPhotos(images);
     setNextPage(nextPage + 1);
-  };
+  }, []);
   useEffect(() => {
     handleLoadMorePhoto();
-  }, []);
+  }, [handleLoadMorePhoto]);
   return (
     <div>
       <div className="grid grid-cols-4 gap-5 p-5 ">
