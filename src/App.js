@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import "./asset/index.scss";
+import StopWatch from "./components/StopWatch";
 // import HackerNews from "./components/news/HackerNews";
 // import Timmer from "./components/Timmer";
 // import Header from "./components/Header";
@@ -7,16 +9,10 @@ import "./asset/index.scss";
 // import CardList from "./components/card/CardList";
 // import CardTaiWind from "./components/card/CardTailWind";
 // import Photos from "./components/photo/Photos";
-import HackerNewsWhiteReduce from "./components/news/HackerNewsWhithReduce";
 function App() {
   return (
     <div className="App">
-      {/* <Photos></Photos> */}
-      {/* <Counter></Counter> */}
-      {/* <Timmer></Timmer> */}
-      {/* <Header></Header> */}
-      {/* <HackerNews></HackerNews> */}
-      <HackerNewsWhiteReduce></HackerNewsWhiteReduce>
+      <StopWatch></StopWatch>
     </div>
   );
 }
