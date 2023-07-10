@@ -1,5 +1,6 @@
 import "./asset/index.scss";
-import TextareaAutoResize from "./components/TextareaAutoResize";
+import DropDown from "./components/DropDown";
+// import TextareaAutoResize from "./components/TextareaAutoResize";
 // import StopWatch from "./components/StopWatch";
 // import HackerNews from "./components/news/HackerNews";
 // import Timmer from "./components/Timmer";
@@ -10,7 +11,11 @@ import TextareaAutoResize from "./components/TextareaAutoResize";
 // import CardTaiWind from "./components/card/CardTailWind";
 // import Photos from "./components/photo/Photos";
 function App() {
-  return <div className="App">{<TextareaAutoResize></TextareaAutoResize>}</div>;
+  return (
+    <div className="App">
+      <DropDown></DropDown>
+    </div>
+  );
 }
 
 export default App;
