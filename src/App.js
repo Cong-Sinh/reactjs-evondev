@@ -1,8 +1,9 @@
 import "./asset/index.scss";
 // import Blog from "./components/Blog";
-import DropDown from "./components/DropDown";
-import SidebarMenu from "./components/SidebarMenu";
-import useCLickOutSide from "./hooks/useClickOutSide";
+// import DropDown from "./components/DropDown";
+// import SidebarMenu from "./components/SidebarMenu";
+// import useCLickOutSide from "./hooks/useClickOutSide";
+import Form from "./components/form/Form";
 // import TextareaAutoResize from "./components/TextareaAutoResize";
 // import StopWatch from "./components/StopWatch";
 // import HackerNews from "./components/news/HackerNews";
@@ -15,17 +16,9 @@ import useCLickOutSide from "./hooks/useClickOutSide";
 // import CardTaiWind from "./components/card/CardTailWind";
 // import Photos from "./components/photo/Photos";
 function App() {
-  const { show, setShow, nodeRef } = useCLickOutSide("button");
   return (
-    <div className="App">
-      <button
-        onClick={() => setShow(true)}
-        className="inline-block  m-3 p-3 rounded-lg text-white bg-green-400"
-      >
-        buttons
-      </button>
-      <SidebarMenu show={show} ref={nodeRef}></SidebarMenu>
-      <DropDown></DropDown>
+    <div>
+      <Form></Form>
     </div>
   );
 }
