@@ -1,5 +1,6 @@
 import "./asset/index.scss";
-import DropDown from "./components/DropDown";
+import Blog from "./components/Blog";
+// import DropDown from "./components/DropDown";
 // import TextareaAutoResize from "./components/TextareaAutoResize";
 // import StopWatch from "./components/StopWatch";
 // import HackerNews from "./components/news/HackerNews";
@@ -13,7 +14,7 @@ import DropDown from "./components/DropDown";
 function App() {
   return (
     <div className="App">
-      <DropDown></DropDown>
+      <Blog></Blog>
     </div>
   );
 }
