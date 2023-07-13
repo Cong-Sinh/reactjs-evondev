@@ -1,29 +1,37 @@
 import { useFormik } from "formik";
 import { values } from "lodash";
 import React from "react";
+import * as Yup from "yup";
 
-const validate = (values) => {
-  const error = {};
-  if (!values.firstName) {
-    error.firstName = "required";
-  } else if (values.firstName.length > 20) {
-    error.firstName = "must be at least 20 characters";
-  }
+// const validate = (values) => {
+//   const error = {};
+//   if (!values.firstName) {
+//     error.firstName = "required";
+//   } else if (values.firstName.length > 20) {
+//     error.firstName = "must be at least 20 characters";
+//   }
 
-  if (!values.lastName) {
-    error.lastName = "hihi";
-  } else if (values.lastName.length > 20) {
-    error.lastName = "must be at least 20 characters";
-  }
-  return error;
-};
+//   if (!values.lastName) {
+//     error.lastName = "hihi";
+//   } else if (values.lastName.length > 20) {
+//     error.lastName = "must be at least 20 characters";
+//   }
+//   return error;
+// };
 const SignUpform = () => {
   const formik = useFormik({
     initialValues: {
       firstName: "",
       lastName: "",
     },
-    validate,
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+        .max(20, "must be at least 20 characters")
+        .required("required"),
+      lastName: Yup.string()
+        .max(10, "must be at least 10")
+        .required("required"),
+    }),
     onSubmit: (values) => {
       console.log(values);
     },
@@ -38,12 +46,9 @@ const SignUpform = () => {
         <label htmlFor="firstName">firstName</label>
         <input
           type=""
-          id="firstName"
           placeholder="Enter firstName"
           className="p-4 rounded-md border border-gray-100"
-          value={formik.values.firstName}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps("firstName")}
         />
         {formik.touched.firstName && formik.errors.firstName ? (
           <div className="text-sm text-red-500">{formik.errors.firstName}</div>
