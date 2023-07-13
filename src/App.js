@@ -1,9 +1,10 @@
 import "./asset/index.scss";
+import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import Blog from "./components/Blog";
 // import DropDown from "./components/DropDown";
 // import SidebarMenu from "./components/SidebarMenu";
 // import useCLickOutSide from "./hooks/useClickOutSide";
-import Form from "./components/form/Form";
+// import Form from "./components/form/Form";
 // import TextareaAutoResize from "./components/TextareaAutoResize";
 // import StopWatch from "./components/StopWatch";
 // import HackerNews from "./components/news/HackerNews";
@@ -18,7 +19,7 @@ import Form from "./components/form/Form";
 function App() {
   return (
     <div>
-      <Form></Form>
+      <MovieSearchApp></MovieSearchApp>
     </div>
   );
 }
