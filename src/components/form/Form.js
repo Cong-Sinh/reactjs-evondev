@@ -66,7 +66,7 @@ const Form = () => {
       </form>
 
       {/* {fullname}
-      <input
+      <input 
         type="text"
         name="fullname"
         className="w-full max-w-[300px] p-3 border border-gray-200 rounded-lg"

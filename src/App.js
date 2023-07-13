@@ -1,5 +1,6 @@
 import "./asset/index.scss";
-import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
+// import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
+import SignUpform from "./components/form/SignUpform";
 // import Blog from "./components/Blog";
 // import DropDown from "./components/DropDown";
 // import SidebarMenu from "./components/SidebarMenu";
@@ -19,7 +20,7 @@ import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 function App() {
   return (
     <div>
-      <MovieSearchApp></MovieSearchApp>
+      <SignUpform></SignUpform>
     </div>
   );
 }
