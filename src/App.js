@@ -3,7 +3,7 @@ import SignUpformHook from "./components/form/SignUpformHook";
 // import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import SignUpform from "./components/form/SignUpform";
 // import SignUpformV2 from "./components/form/SignUpformV2";
-import SignUpformV2final from "./components/form/SignUpformV2final";
+// import SignUpformV2final from "./components/form/SignUpformV2final";
 // import Blog from "./components/Blog";
 // import DropDown from "./components/DropDown";
 // import SidebarMenu from "./components/SidebarMenu";
