@@ -30,6 +30,7 @@ const SignUpformHook = () => {
     reset,
     setFocus,
     setValue,
+    control,
   } = useForm({
     resolver: yupResolver(schemaValidation),
     mode: "onChange",
@@ -112,13 +113,15 @@ const SignUpformHook = () => {
       </div>
       <div className="flex flex-col gap-2 mb-5">
         <label htmlFor="email">email address</label>
-        <input
+
+        <MyInput name="email" placeholder="Enter email" control={control} />
+        {/* <input
           type="email"
           id="email"
           placeholder="Enter email"
           className="p-4 rounded-md border border-gray-100"
           {...register("email")}
-        />
+        /> */}
       </div>
 
       <div className="flex flex-col gap-2 mb-5">
@@ -146,6 +149,39 @@ const SignUpformHook = () => {
         Demo Data
       </button>
     </form>
+  );
+};
+// controller
+// const MyInput = ({ control, ...props }) => {
+//   return (
+//     <Controller
+//       name={props.name}
+//       control={control}
+//       defaultValue=""
+//       render={({ field }) => (
+//         <input
+//           className="p-4 rounded-md border border-gray-100"
+//           {...field}
+//           {...props}
+//         />
+//       )}
+//     ></Controller>
+//   );
+// };
+
+// useControleer
+const MyInput = ({ control, ...props }) => {
+  const { field } = useController({
+    control,
+    name: props.name,
+    defaultValue: "",
+  });
+  return (
+    <input
+      className="p-4 rounded-md border border-gray-100"
+      {...field}
+      {...props}
+    />
   );
 };
 
