@@ -1,5 +1,7 @@
+import { property } from "lodash";
 import React from "react";
 import * as ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 const Modal = ({ open = false, handleClose = () => {} }) => {
   if (typeof document === "undefined") return;
   <div className="modal"></div>;
@@ -63,5 +65,10 @@ const Modal = ({ open = false, handleClose = () => {} }) => {
     document.querySelector("body")
   );
 };
+
+// Modal.prototype = {
+//   open: property.bool.isRequired,
+//   handleClose: PropTypes.func.isRequired,
+// };
 
 export default Modal;
