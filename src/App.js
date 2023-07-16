@@ -1,6 +1,9 @@
 import { Fragment, useState } from "react";
 import "./asset/index.scss";
-import SignUpformHook from "./components/form/SignUpformHook";
+// import SignUpformHook from "./components/form/SignUpformHook";
+// import Modal from "./components/modal/Modal";
+// import DropDownPortal from "./components/DropDownPortal";
+// import Tooltip from "./components/Tooltip";
 import Modal from "./components/modal/Modal";
 // import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import SignUpform from "./components/form/SignUpform";
@@ -23,21 +26,29 @@ import Modal from "./components/modal/Modal";
 // import CardTaiWind from "./components/card/CardTailWind";
 // import Photos from "./components/photo/Photos";
 function App() {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   return (
     <Fragment>
-      <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
+      {/* <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
       <div
         className="w-[200px] text-center p-4  max-w-[482px]  text-white bg-blue-500 rounded-lg cursor-pointer"
         onClick={() => setShowModal(true)}
       >
         Open Modal
-      </div>
+      </div> */}
+      {/* 
       <div className="relative z-30">
         Lorem ipsum dolor sit am id, consectetur adipiscing elit sed diam nonumy
         eirmod tempor incididunt ut labore et dolore magna aliquyam erat
         voluptate velit esse cillum dolore magna al
-      </div>
+      </div> */}
+      {/* <div className="p-5 overflow-hidden">
+         <DropDownPortal></DropDownPortal>
+        <div className="p-10">
+          <Tooltip text="Click vao day">This is a tolltip</Tooltip>
+        </div>
+      </div> */}
+      {/* <Modal></Modal> */}
     </Fragment>
   );
 }
