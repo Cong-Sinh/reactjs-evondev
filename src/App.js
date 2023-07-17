@@ -4,10 +4,9 @@ import "./asset/index.scss";
 // import Modal from "./components/modal/Modal";
 // import DropDownPortal from "./components/DropDownPortal";
 // import Tooltip from "./components/Tooltip";
-import Modal from "./components/modal/Modal";
-import Portal from "./components/Portal";
 import ModalBase from "./components/modal/ModalBase";
 import ModalAdvanced from "./components/modal/ModalAdvanced";
+import TooltipAdvanced from "./components/tooltip/TooltipAdvanced";
 // import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import SignUpform from "./components/form/SignUpform";
 // import SignUpformV2 from "./components/form/SignUpformV2";
@@ -34,7 +33,7 @@ function App() {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <Fragment>
+    <div className="flex items-center justify-center p-5">
       {/* <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
       <div
         className="w-[200px] text-center p-4  max-w-[482px]  text-white bg-blue-500 rounded-lg cursor-pointer"
@@ -57,14 +56,14 @@ function App() {
       {/* <Modal></Modal> */}
 
       <button
-        className="p-5 text-center text-white bg-blue-400 rounded-none"
+        className="p-5 m-5 text-center text-white bg-blue-400 rounded-none"
         onClick={() => setOpenModalBase(true)}
       >
         open modal bse
       </button>
 
       <button
-        className="p-5 text-center text-white bg-blue-400 rounded-none"
+        className="p-5 m-5 text-center text-white bg-blue-400 rounded-none"
         onClick={() => setOpenModal(true)}
       >
         open modal
@@ -83,7 +82,7 @@ function App() {
         visible={openModal}
         onClose={() => setOpenModal(false)}
         heading="Welcome Back!"
-        bodyClassName="w-full max-w-[400px]"
+        bodyClassName="w-full max-w-[400px] bg-white p-10 rounded-lg"
       >
         <div className="flex flex-col gap-5 mb-5">
           <label htmlFor="email" className="text-sm cursor-pointer">
@@ -110,7 +109,10 @@ function App() {
           </button>
         </div>
       </ModalAdvanced>
-    </Fragment>
+      <div className="inline-block ml-5">
+        <TooltipAdvanced title="Tooltip">This is a tooltip</TooltipAdvanced>
+      </div>
+    </div>
   );
 }
 
