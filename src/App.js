@@ -14,6 +14,7 @@ import HeaderMain from "./components/HeaderMain";
 import { AuthProvider } from "./contexts/auth-context";
 import { GaleeryProvider } from "./contexts/gallery-context";
 import PhotoList from "./components/gallery/PhotoList";
+import CardList from "./components/gallery/CardList";
 // import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import SignUpform from "./components/form/SignUpform";
 // import SignUpformV2 from "./components/form/SignUpformV2";
@@ -134,6 +135,7 @@ function App() {
           <GaleeryProvider>
             <HeaderMain></HeaderMain>
             <PhotoList></PhotoList>
+            <CardList></CardList>
           </GaleeryProvider>
         </AuthProvider>
       </Fragment>
