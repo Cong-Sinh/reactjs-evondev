@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import useToggle from "./useToggle";
+import AccordionContent from "./AccordionContent";
+import AccordionHeader from "./AccordionHeader";
 
-const Accordion = () => {
+const Accordion = ({ header, children }) => {
   //   const [show, shetShow] = useState(false);
   //   const handleToggleShow = () => {
   //     shetShow((previous) => !previous);
@@ -11,13 +13,10 @@ const Accordion = () => {
 
   return (
     <div>
-      <div>
-        <div className="cursor-pointer header" onClick={handleToggleShow}>
-          Accordion header
-        </div>
-        <span>+</span>
-      </div>
-      {show && <div className="content">Accordion content</div>}
+      <AccordionHeader show={show} handleToggleShow={handleToggleShow}>
+        {header}
+      </AccordionHeader>
+      <AccordionContent show={show}>{children}</AccordionContent>
     </div>
   );
 };

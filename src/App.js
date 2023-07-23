@@ -171,7 +171,7 @@ function App() {
       </div>
 
       <div>
-        <Accordion></Accordion>
+        <Accordion header="Can I change my plan">sdfgsdfsdfsdfsdsf</Accordion>
         <Editable></Editable>
       </div>
     </div>
