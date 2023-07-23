@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+// import { Fragment, useState } from "react";
 // import { CountProvider, useCount } from "./contexts/countContext";
 import "./asset/index.scss";
 // import SignUpformHook from "./components/form/SignUpformHook";
@@ -10,11 +10,16 @@ import "./asset/index.scss";
 // import TooltipAdvanced from "./components/tooltip/TooltipAdvanced";
 // import CountDisplay from "./components/count/CountDisplay";
 // import Counter from "./components/count/Counter";
-import HeaderMain from "./components/HeaderMain";
-import { AuthProvider } from "./contexts/auth-context";
-import { GaleeryProvider } from "./contexts/gallery-context";
-import PhotoList from "./components/gallery/PhotoList";
-import CardList from "./components/gallery/CardList";
+// import HeaderMain from "./components/HeaderMain";
+// import { AuthProvider } from "./contexts/auth-context";
+// import { GaleeryProvider } from "./contexts/gallery-context";
+// import PhotoList from "./components/gallery/PhotoList";
+// import CardList from "./components/gallery/CardList";
+import { Route, Routes } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import BlogPage from "./components/router/BlogPage";
+import ProfilePage from "./components/router/ProfilePage";
+import BlogPageDetail from "./components/router/BlogPageDetail";
 // import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import SignUpform from "./components/form/SignUpform";
 // import SignUpformV2 from "./components/form/SignUpformV2";
@@ -130,7 +135,7 @@ function App() {
         </CountProvider>
       </div> */}
 
-      <Fragment>
+      {/* <Fragment>
         <AuthProvider>
           <GaleeryProvider>
             <HeaderMain></HeaderMain>
@@ -138,7 +143,20 @@ function App() {
             <CardList></CardList>
           </GaleeryProvider>
         </AuthProvider>
-      </Fragment>
+      </Fragment> */}
+
+      <Routes>
+        <Route path="/" element={<Navigation></Navigation>}>
+          <Route path="/" element={<>Home Page</>}></Route>
+          <Route path="/blog" element={<BlogPage></BlogPage>}></Route>
+          <Route
+            path="/blog/:slug"
+            element={<BlogPageDetail></BlogPageDetail>}
+          ></Route>
+          <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
+        </Route>
+        <Route path="*" element={<>quay ve ngay</>}></Route>
+      </Routes>
     </div>
   );
 }
