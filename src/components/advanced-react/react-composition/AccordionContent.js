@@ -1,14 +1,16 @@
-import React from "react";
-
-const AccordionContent = ({ show, children }) => {
+import React, { Fragment } from "react";
+import { useAccordion } from "./accordion-context";
+// Specialized component
+const AccordionContent = ({ children }) => {
+  const { show } = useAccordion();
   return (
-    <div>
+    <Fragment>
       {show && (
-        <div className="p-4 mt-5 border border-gray-200 rounded-lg content">
+        <div className="p-4 mt-2 border border-gray-200 rounded-lg content">
           {children}
         </div>
       )}
-    </div>
+    </Fragment>
   );
 };
 

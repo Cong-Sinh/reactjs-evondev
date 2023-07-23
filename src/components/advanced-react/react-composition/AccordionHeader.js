@@ -1,18 +1,16 @@
 import React from "react";
+import { useAccordion } from "./accordion-context";
 
-const AccordionHeader = ({ show, handleToggleShow, children }) => {
+// Specialized component
+const AccordionHeader = ({ children }) => {
+  const { show, handleToggleShow } = useAccordion();
   return (
-    <div>
-      <div>
-        <div
-          className="p-4 mt-5 border border-gray-200 rounded-lg cursor-pointer header content"
-          onClick={handleToggleShow}
-        >
-          {children}
-          {show ? <span>-</span> : <span>+</span>}
-        </div>
-        <span>+</span>
-      </div>
+    <div
+      className="flex items-center justify-between p-4 border border-gray-200 rounded-lg cursor-pointer header"
+      onClick={handleToggleShow}
+    >
+      <span>{children}</span>
+      {show ? <span>-</span> : <span>+</span>}
     </div>
   );
 };
