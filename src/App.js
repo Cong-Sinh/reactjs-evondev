@@ -1,6 +1,8 @@
 // import { Fragment, useState } from "react";
 // import { CountProvider, useCount } from "./contexts/countContext";
+import { useState } from "react";
 import "./asset/index.scss";
+import Counter from "./components/advanced-react/control-props/Counter";
 import FetchingData from "./components/advanced-react/hoc/FetchingData";
 import Accordion from "./components/advanced-react/react-composition/Accordion";
 import Editable from "./components/advanced-react/react-composition/Editable";
@@ -51,6 +53,10 @@ function App() {
   // const [openModalBase, setOpenModalBase] = useState(false);
   // const [openModal, setOpenModal] = useState(false);
 
+  const [count, setCount] = useState(5);
+  const handleCountChange = (newCount) => {
+    setCount(newCount);
+  };
   return (
     <div className="">
       {/* <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
@@ -164,16 +170,18 @@ function App() {
         <Route path="*" element={<>quay ve ngay</>}></Route>
       </Routes> */}
 
-      <div>
-        {/* <FetchingData></FetchingData> */}
-        {/* <Title>{() => <h1>hello from render props </h1>}</Title> */}
-        {/* <HandleValue></HandleValue> */}
-      </div>
+      {/* <div> */}
+      {/* <FetchingData></FetchingData> */}
+      {/* <Title>{() => <h1>hello from render props </h1>}</Title> */}
+      {/* <HandleValue></HandleValue> */}
+      {/* </div> */}
 
-      <div>
+      {/* <div>
         <Accordion header="Can I change my plan">sdfgsdfsdfsdfsdsf</Accordion>
         <Editable></Editable>
-      </div>
+      </div> */}
+
+      <Counter value={count} onChange={handleCountChange}></Counter>
     </div>
   );
 }
