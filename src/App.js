@@ -1,6 +1,12 @@
 // import { Fragment, useState } from "react";
 // import { CountProvider, useCount } from "./contexts/countContext";
 import "./asset/index.scss";
+import FetchingData from "./components/advanced-react/hoc/FetchingData";
+import Accordion from "./components/advanced-react/react-composition/Accordion";
+import Editable from "./components/advanced-react/react-composition/Editable";
+import HandleValue from "./components/advanced-react/render-props/HandleValue";
+import Title from "./components/advanced-react/render-props/Title";
+// import FetchingDataOder from "./components/advanced-react/hoc/FetchingDataOder";
 // import SignUpformHook from "./components/form/SignUpformHook";
 // import Modal from "./components/modal/Modal";
 // import DropDownPortal from "./components/DropDownPortal";
@@ -15,11 +21,11 @@ import "./asset/index.scss";
 // import { GaleeryProvider } from "./contexts/gallery-context";
 // import PhotoList from "./components/gallery/PhotoList";
 // import CardList from "./components/gallery/CardList";
-import { Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import BlogPage from "./components/router/BlogPage";
-import ProfilePage from "./components/router/ProfilePage";
-import BlogPageDetail from "./components/router/BlogPageDetail";
+// import { Route, Routes } from "react-router-dom";
+// import Navigation from "./components/Navigation";
+// import BlogPage from "./components/router/BlogPage";
+// import ProfilePage from "./components/router/ProfilePage";
+// import BlogPageDetail from "./components/router/BlogPageDetail";
 // import MovieSearchApp from "./components/MovieSearchApp/MovieSearchApp";
 // import SignUpform from "./components/form/SignUpform";
 // import SignUpformV2 from "./components/form/SignUpformV2";
@@ -145,7 +151,7 @@ function App() {
         </AuthProvider>
       </Fragment> */}
 
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Navigation></Navigation>}>
           <Route path="/" element={<>Home Page</>}></Route>
           <Route path="/blog" element={<BlogPage></BlogPage>}></Route>
@@ -156,7 +162,18 @@ function App() {
           <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
         </Route>
         <Route path="*" element={<>quay ve ngay</>}></Route>
-      </Routes>
+      </Routes> */}
+
+      <div>
+        {/* <FetchingData></FetchingData> */}
+        {/* <Title>{() => <h1>hello from render props </h1>}</Title> */}
+        {/* <HandleValue></HandleValue> */}
+      </div>
+
+      <div>
+        <Accordion></Accordion>
+        <Editable></Editable>
+      </div>
     </div>
   );
 }
