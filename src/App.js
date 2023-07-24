@@ -2,12 +2,14 @@
 // import { CountProvider, useCount } from "./contexts/countContext";
 import { useState } from "react";
 import "./asset/index.scss";
-import Counter from "./components/advanced-react/control-props/Counter";
+// import Counter from "./components/advanced-react/control-props/Counter";
+import Counter from "./components/advanced-react/state-reducer/Counter";
 import FetchingData from "./components/advanced-react/hoc/FetchingData";
 import Accordion from "./components/advanced-react/react-composition/Accordion";
 import Editable from "./components/advanced-react/react-composition/Editable";
 import HandleValue from "./components/advanced-react/render-props/HandleValue";
 import Title from "./components/advanced-react/render-props/Title";
+import useCounter from "./components/advanced-react/state-reducer/useCounter";
 // import FetchingDataOder from "./components/advanced-react/hoc/FetchingDataOder";
 // import SignUpformHook from "./components/form/SignUpformHook";
 // import Modal from "./components/modal/Modal";
@@ -53,10 +55,15 @@ function App() {
   // const [openModalBase, setOpenModalBase] = useState(false);
   // const [openModal, setOpenModal] = useState(false);
 
-  const [count, setCount] = useState(5);
-  const handleCountChange = (newCount) => {
-    setCount(newCount);
-  };
+  // const [count, setCount] = useState(5);
+  // const handleCountChange = (newCount) => {
+  //   if (newCount > 10) setCount(0);
+  //   else setCount(newCount);
+  // };
+
+  const { count, handleDecrement, handleIncrement } = useCounter({
+    initial: 0,
+  });
   return (
     <div className="">
       {/* <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
@@ -181,7 +188,13 @@ function App() {
         <Editable></Editable>
       </div> */}
 
-      <Counter value={count} onChange={handleCountChange}></Counter>
+      {/* <Counter value={count} onChange={handleCountChange}></Counter> */}
+
+      <Counter
+        count={count}
+        handleDecrement={handleDecrement}
+        handleIncrement={handleIncrement}
+      ></Counter>
     </div>
   );
 }
